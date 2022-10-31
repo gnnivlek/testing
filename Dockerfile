@@ -1,4 +1,4 @@
-FROM rhel7:7.9-810.1666711778
+FROM registry.redhat.io/rhel7:7.9-810.1666711778
 
 ################################################################
 # DEFINE sapcc and jvm version
