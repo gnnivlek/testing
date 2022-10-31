@@ -30,8 +30,8 @@ WORKDIR /tmp/sapdownloads
 # ATTENTION:
 # This automated download automatically accepts SAP's End User License Agreement (EULA).
 # Thus, when using this docker file as is you automatically accept SAP's EULA!
-RUN  wget --no-check-certificate --no-cookies --header "Cookie: eula_3_1_agreed=tools.hana.ondemand.com/developer-license-3_1.txt; path=/;" -S https://tools.hana.ondemand.com/additional/sapcc-$SAPCC_VERSION-linux-x64.zip && \
-    wget --no-check-certificate --no-cookies --header "Cookie: eula_3_1_agreed=tools.hana.ondemand.com/developer-license-3_1.txt; path=/;" -S https://tools.hana.ondemand.com/additional/sapjvm-$SAPJVM_VERSION-linux-x64.rpm && \
+RUN  wget --no-check-certificate -e use_proxy=yes -e https_proxy=10.81.58.18:8080 -e http_proxy=10.81.58.18:8080 --no-cookies --header "Cookie: eula_3_1_agreed=tools.hana.ondemand.com/developer-license-3_1.txt; path=/;" -S https://tools.hana.ondemand.com/additional/sapcc-$SAPCC_VERSION-linux-x64.zip && \
+    wget --no-check-certificate -e use_proxy=yes -e https_proxy=10.81.58.18:8080 -e http_proxy=10.81.58.18:8080 --no-cookies --header "Cookie: eula_3_1_agreed=tools.hana.ondemand.com/developer-license-3_1.txt; path=/;" -S https://tools.hana.ondemand.com/additional/sapjvm-$SAPJVM_VERSION-linux-x64.rpm && \
     unzip sapcc-$SAPCC_VERSION-linux-x64.zip && \
     rpm -i sapjvm-$SAPJVM_VERSION-linux-x64.rpm && \
     rpm -i com.sap.scc-ui-$SAPCC_VERSION-16.x86_64.rpm
