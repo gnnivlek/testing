@@ -36,8 +36,8 @@ WORKDIR /tmp/sapdownloads
 
 RUN  echo $(env | grep -i proxy)
 
-RUN  curl -k -H "Cookie: eula_3_1_agreed=tools.hana.ondemand.com/developer-license-3_1.txt; path=/;" https://tools.hana.ondemand.com/additional/sapcc-$SAPCC_VERSION-linux-x64.zip -C sapcc-$SAPCC_VERSION-linux-x64.zip && \
-    curl -k -H "Cookie: eula_3_1_agreed=tools.hana.ondemand.com/developer-license-3_1.txt; path=/;" https://tools.hana.ondemand.com/additional/sapjvm-$SAPJVM_VERSION-linux-x64.rpm - C sapjvm-$SAPJVM_VERSION-linux-x64.rpm && \
+RUN  curl -k -H "Cookie: eula_3_1_agreed=tools.hana.ondemand.com/developer-license-3_1.txt; path=/;" https://tools.hana.ondemand.com/additional/sapcc-$SAPCC_VERSION-linux-x64.zip -O sapcc-$SAPCC_VERSION-linux-x64.zip && \
+    curl -k -H "Cookie: eula_3_1_agreed=tools.hana.ondemand.com/developer-license-3_1.txt; path=/;" https://tools.hana.ondemand.com/additional/sapjvm-$SAPJVM_VERSION-linux-x64.rpm -O sapjvm-$SAPJVM_VERSION-linux-x64.rpm && \
     unzip sapcc-$SAPCC_VERSION-linux-x64.zip && \
     rpm -i sapjvm-$SAPJVM_VERSION-linux-x64.rpm && \
     rpm -i com.sap.scc-ui-$SAPCC_VERSION-16.x86_64.rpm
