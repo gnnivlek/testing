@@ -6,6 +6,9 @@ FROM registry.redhat.io/rhel7:7.9-810.1666711778
 ARG SAPCC_VERSION=2.15.0
 ARG SAPJVM_VERSION=8.1.090
 
+ENV HTTP_PROXY="http://10.58.81.18:8080"
+ENV HTTPS_PROXY="http://10.58.81.18:8080"
+
 ################################################################
 # Upgrade + install dependencies
 ################################################################
