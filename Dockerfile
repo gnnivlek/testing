@@ -127,3 +127,5 @@ CMD /opt/sapjvm_8/bin/java \
 # downloaded from https://tools.hana.ondemand.com/#cloud, i.e. sapcc-2.12.4-windows-x64.zip, sapcc-2.12.4-linux-x64.tar.gz, sapcc-2.12.4-macosx-x64.tar.gz
 # To verify this, simply extract any of these archives and check the files "deamon.sh" and "props.ini".
 # The first 4 option in CMD are derived from deamon.sh, all other options are derived from the props.ini file.
+
+RUN chmod -R 777 /opt/sap
