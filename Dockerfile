@@ -6,8 +6,8 @@ FROM registry.redhat.io/rhel7:7.9-810.1666711778
 ARG SAPCC_VERSION=2.15.0
 ARG SAPJVM_VERSION=8.1.090
 
-ARG HTTP_PROXY="http://intra.bca.co.id:8080"
-ARG HTTPS_PROXY="http://intra.bca.co.id:8080"
+ARG HTTP_PROXY="http://proxy.intra.bca.co.id:8080"
+ARG HTTPS_PROXY="http://proxy.intra.bca.co.id:8080"
 
 ################################################################
 # Upgrade + install dependencies
